@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping package="com.fms.maintenance">
+	<class name="RequestImpl" table="REQUEST">
+		<!--  <id name="requestId" column="requestId"/>-->
+		<id name="requestId" type="java.lang.Integer">
+            <column name="requestId" />
+            <generator class="identity" />
+        </id>
+		<many-to-one name="problem" class="com.fms.problem.ProblemImpl" column="problemId" cascade="all" unique="true" /> 
+		<property name="requestDate" type="string" column="requestDate" />
+		<property name="requestedBy" type="string" column="requestedBy" />
+	</class>
+</hibernate-mapping>

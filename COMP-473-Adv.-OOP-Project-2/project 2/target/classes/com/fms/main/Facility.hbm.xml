@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping package="com.fms.facility">
+    
+    <!-- TODO Note: If you name a table with a hyphen, e.g. hibernate-test, you MUST 
+    include Grave accent, `, when naming the table attribute below. Otherwise,
+    a MySQL error would arise.
+ 
+ 	So the config: table="`hibernate-test`"
+ 	will become: INSERT INTO `hibernate-test` (testName, testId) VALUES (?,?)
+ 	-->
+	
+	<class name="Facility" table="FACILITY">
+		<!--  <id name="facilityId" column="facilityId" generator/>-->
+		<id name="facilityId" type="java.lang.Integer">
+            <column name="facilityId" />
+            <generator class="identity" />
+        </id>
+		<property name="name" type="string" column="name" length="30"/>
+		<!-- Simulates one-to-one relationship between EMPLOYEE and FACILITY, as the column managerId in FACILITY is declared unique -->
+		<many-to-one name="manager" class="com.fms.facilityuse.EmployeeImpl" column="managerId" cascade="all" unique="true" /> 
+		<property name="officeAddress" type="string" column="officeAddress" length="30"/>
+		<property name="size" type="int" column="size"/>
+		<property name="numParkingSpace" type="int" column="numParkingSpace" />
+		<!--  <set name="units" table="FACILITY_UNIT_RELATIONSHIP" cascade="all">
+		    <key column="facilityId" />
+		    <many-to-many column="unitId" class="com.fms.facility.Unit" unique="true" />
+		</set>-->
+		
+		<set name="units" table="UNIT"  cascade="all"
+				inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="facilityId" not-null="true" />
+            </key>
+            <one-to-many class="Unit" />
+        </set>
+	</class>
+	
+</hibernate-mapping>

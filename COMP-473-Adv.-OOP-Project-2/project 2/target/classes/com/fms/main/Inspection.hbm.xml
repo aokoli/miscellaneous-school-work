@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping package="com.fms.inspection">
+	<class name="InspectionImpl" table="INSPECTION">
+		<!--  <id name="inspectionId" column="inspectionId"/>-->
+		<id name="inspectionId" type="java.lang.Integer">
+            <column name="inspectionId" />
+            <generator class="identity" />
+        </id>
+		<property name="inspectionDetails" type="string" column="inspectionDetails" />
+		<many-to-one name="employee" class="com.fms.facilityuse.EmployeeImpl" fetch="select">
+            <column name="`employeeId`" not-null="true" />
+        </many-to-one>
+		<!-- 
+			TODO Make problemId in INSPECTION_PROBLEM_RELATIONSHIP primary key in DB. 
+			Experiment with <composite-id> and <key-many-to-one/> attribute.
+		 -->
+		<join table="INSPECTION_PROBLEM_RELATIONSHIP"> 
+		    <key column="inspectionId"/> 
+		    <many-to-one name="problem" class="com.fms.problem.ProblemImpl" column="problemId" cascade="all" unique="true" />
+		</join> 
+			
+			
+	</class>
+</hibernate-mapping>

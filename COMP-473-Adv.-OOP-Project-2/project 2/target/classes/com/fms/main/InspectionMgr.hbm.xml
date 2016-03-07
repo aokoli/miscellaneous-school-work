@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping package="com.fms.inspection">
+	<class name="InspectionMgrImpl" table="INSPECTIONMGR">
+		<!--  <id name="inspectionMgrId" column="inspectionMgrId"/>-->
+		<id name="inspectionMgrId" type="java.lang.Integer">
+            <column name="inspectionMgrId" />
+            <generator class="identity" />
+        </id>
+		<many-to-one name="inspectionSchedule" class="com.fms.schedule.ScheduleImpl" column="inspectionScheduleId" cascade="all" unique="true" /> 
+		<many-to-one name="inspection" class="com.fms.inspection.InspectionImpl" column="inspectionId" cascade="all" unique="true" /> 
+		
+		<many-to-one name="unit" class="com.fms.facility.Unit" fetch="select">
+            <column name="`unitId`" not-null="true" />
+        </many-to-one>
+	</class>
+</hibernate-mapping>

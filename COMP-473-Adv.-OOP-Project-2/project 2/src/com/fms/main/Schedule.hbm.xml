@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping package="com.fms.schedule">
+	<class name="ScheduleImpl" table="SCHEDULE">
+		<!--  <id name="scheduleId" column="scheduleId"/>-->
+		<id name="scheduleId" type="java.lang.Integer">
+            <column name="scheduleId" />
+            <generator class="identity" />
+        </id>
+		<property name="startDate" type="string" column="startDate" />
+		<property name="endDate" type="string" column="endDate" />
+		
+		<many-to-one name="employee" class="com.fms.facilityuse.EmployeeImpl" fetch="select">
+            <column name="`employeeId`" not-null="false" />
+        </many-to-one>
+	</class>
+</hibernate-mapping>

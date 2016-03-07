@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping package="com.fms.problem">
+	<class name="ProblemImpl" table="PROBLEM">
+		<!--  <id name="problemId" column="problemId"/>-->
+		<id name="problemId" type="java.lang.Integer">
+            <column name="problemId" />
+            <generator class="identity" />
+        </id>
+		<property name="problemDetails" type="string" column="problemDetails" />
+		<property name="resolved" type="boolean" column="isResolved" />
+		<property name="resolveDetails" type="string" column="resolveDetails" />
+		
+		<!-- 
+		<property name="problemStartDate" type="string" column="problemStartDate" />
+		<property name="problemEndDate" type="string" column="problemEndDate" />
+		 -->
+	</class>
+</hibernate-mapping>

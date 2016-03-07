@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping package="com.fms.maintenance">
+	<class name="MaintenanceMgrImpl" table="MAINTENANCEMGR">
+		<!--  <id name="maintenanceMgrId" column="maintenanceMgrId" />-->
+		<id name="maintenanceMgrId" type="java.lang.Integer">
+            <column name="maintenanceMgrId" />
+            <generator class="identity" />
+        </id>
+		<!-- Simulates one-to-one relationship between MAINTENANCEMGR and REQUEST, as the column maintenanceRequestId in MAINTENANCEMGR is declared unique -->
+		<many-to-one name="maintenanceRequest" class="com.fms.maintenance.RequestImpl" column="maintenanceRequestId" cascade="all" unique="true" /> 
+		<many-to-one name="maintenanceSchedule" class="com.fms.schedule.ScheduleImpl" column="maintenanceScheduleId" cascade="all" unique="true" /> 
+		<many-to-one name="maintenance" class="com.fms.maintenance.MaintenanceImpl" column="maintenanceId" cascade="all" unique="true" /> 
+		
+		<!--  <many-to-one name="unit" class="com.fms.facility.Unit" column="unitId" cascade="all" unique="true" /> -->
+		 
+		<many-to-one name="unit" class="com.fms.facility.Unit" fetch="select">
+            <column name="`unitId`" not-null="false" />
+        </many-to-one>
+	</class>
+</hibernate-mapping>

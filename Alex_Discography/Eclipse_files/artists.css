@@ -1,0 +1,203 @@
+
+/* -----------------------------------------
+   Shared Styles
+----------------------------------------- */
+body {font-family:   'Julius Sans One', sans-serif;
+ background: url(cloudy-sky-cartoon.jpg) left top repeat;
+}
+
+/* -----------------------------------------
+   App Folders
+----------------------------------------- */
+/* Example CSS - Feel free to change or delete if necessary. */
+.app-folders-container { }
+div.folder p {/*font-size: 10px;*/ margin-bottom: 0; }
+.jaf-container > div.folder { /*width: 50px;*/ display: inline-block; text-align: center;}
+div.folderContent > .jaf-container { padding: 10px}
+
+/*
+p, p::before {
+	background: rgba(255,255,255,0.1);
+	font-family: 'Julius Sans One', sans-serif;
+    text-decoration: none;
+}
+
+   p:hover, p:hover::before {
+    background-color: rgba(255,255,255,0.2);
+  }
+*/
+
+
+
+
+
+
+#som { font-family: 'Spicy Rice', cursive;
+	
+	font-size: 30px;
+	
+	text-align: right;
+}
+
+
+/* jQuery App Folders CSS - this is probably vital. Make additions as you please. */
+.jaf-container {
+	/*
+	position: relative;
+	padding: 0;
+	*/
+}
+.jaf-row {
+	/*zoom: 1;
+	width: 90%;
+	margin: 0 auto 12px;*/
+}
+
+/* Interior */
+.folderContent { 
+	background-image:url("http://farm6.static.flickr.com/5270/5676732818_a63fbd0c4e_z.jpg");
+	/*background-image:url("http://images2.wikia.nocookie.net/__cb20080914120315/uncyclopedia/images/archive/5/56/20080914120706!Music-notes.jpg");*/
+	/*background-image:url("http://redfoxmedia.net.au/content/redfox/assets/images/bg-toolbox4.jpg");*/
+	margin-bottom: 5px;
+	border-top: 1px solid #888; 
+	border-bottom: 1px solid #888;
+	width: 100%!important;
+	color: #fff;
+	-moz-box-shadow:    inset 0 0 10px #000000;
+	-webkit-box-shadow: inset 0 0 10px #000000;
+	box-shadow:         inset 0 0 10px #000000;
+}
+.folderContent h1, .folderContent h2, .folderContent h3, .folderContent h4, .folderContent h5, .folderContent h6, .folderContent strong {
+	color: #fff;
+}
+.folder {
+	/*
+	overflow:hidden; 
+	color:white;
+	margin-bottom: 5px;*/
+}
+.folder > a > p {color: #fff;}
+img.app-icon {
+	border-radius:5px;
+	-moz-border-radius: 5px; 
+	-moz-box-shadow: 2px 2px 5px rgba(0,0,0,0.7); 
+    -webkit-box-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+	box-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+	background-image:url("http://farm6.static.flickr.com/5270/5676732818_a63fbd0c4e_z.jpg") ; 
+	/*background-image:url("http://images2.wikia.nocookie.net/__cb20080914120315/uncyclopedia/images/archive/5/56/20080914120706!Music-notes.jpg");*/
+	border:2px solid #ddd; 
+}
+.quote {margin-top: 20px;}
+
+
+/* -----------------------------------------
+   Homepage
+----------------------------------------- */
+
+#iphone {
+	/*background: url(../images/iPhone-4.png) no-repeat center top;*/
+	
+	/*width: 309px;
+	height: 670px;
+	position: relative;
+	margin: 10px auto 0;*/
+	
+}
+
+.iphone-positioner {
+	
+	top: 10%;
+	width: 900PX;
+	height: 100%;
+	position: absolute;
+	margin-left: 20%;
+	
+	/*
+	top: 106px;
+	overflow: hidden;
+	margin-left: 27px;
+	padding-top: 39px;	
+	width: 900px
+	height: 346px;
+	padding-top: 39px;
+	
+	*/
+	
+	
+	/*background: url(../images/iPhone-bg.png) left top no-repeat;*/
+	/*background: url(http://redfoxmedia.net.au/content/redfox/assets/images/bg-toolbox4.jpg) left top no-repeat;*/
+	
+	/*background-color: #141414;*/  /* Matte black*/
+	/*background-color: #daa520;*/
+	/*background-color: #009933;*/
+	
+	/*background: url(../images/musicback.jpg) left top repeat;*/
+
+	
+	
+	/*background: url(http://redfoxmedia.net.au/content/redfox/assets/images/bg-toolbox4.jpg) left top repeat;*/
+	/*background: url(http://images.all-free-download.com/images/graphiclarge/music_instruments_vector_graphics_147286.jpg) left top repeat;*/
+	
+	/*background-color:#ffffff;*/
+
+}
+
+
+div.iphone-positioner a{
+	margin-left: 30%;
+}
+
+
+
+div.iphone-positioner p{
+  /*margin:30px 40px;*/
+  margin:30px 40px;
+  font-weight:bold;
+  color:#000000;
+}
+
+
+.app-folders-container {
+}
+
+
+
+
+  
+  
+  a { text-transform: uppercase; display:block; width:490px; height:28px; /*background-color:#333;*/ border-left:5px solid #222; border-right:5px solid #222; padding-left:10px;
+  text-decoration:none;   /*color:#ffffff*/; color:#333  ;  font-weight:bold; font-family: 'Julius Sans One', sans-serif, Georgia; font-size:18px;  }
+  
+  a:hover {  
+	
+   /*Bending*/
+	-moz-transform:rotate(-5deg); -moz-box-shadow:10px 10px 20px #000000;
+  -webkit-transform:rotate(-5deg); -webkit-box-shadow:10px 10px 20px #000000;
+  transform:rotate(-5deg); box-shadow:10px 10px 20px #000000; 
+  
+  
+  /*Bending Easing*/
+  -webkit-transition: all 0.25s ease-out;
+-moz-transition: all 0.25s ease-out;
+transition: all 0.25s ease-out;
+text-decoration: none;
+
+/*
+background-color:#333;
+  color:#ffffff;
+  */
+  
+  }
+  
+ /* a:focus {
+  
+background-color:#333;
+  color:#ffffff;
+  }
+  */
+
+a:active {
+  
+background-color:#333;
+  color:#ffffff;
+  }

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping package="com.fms.facilityuse">
+	<class name="UsageImpl" table="`usage`">		
+		<id name="usageId" type="java.lang.Integer">
+            <column name="`usageId`" />
+            <generator class="identity" />
+        </id>
+		<property name="startDate" type="string" column="`startDate`" />
+        <property name="endDate" type="string" column="`endDate`" />
+         <property name="owner" type="string" column="`owner`" />  
+         
+        <many-to-one name="unit" class="com.fms.facility.Unit" fetch="select">
+            <column name="`unitId`" not-null="false" />
+        </many-to-one> 
+        
+        <many-to-one name="tenant" class="TenantImpl" fetch="select">
+            <column name="`tenantId`" not-null="false" />
+        </many-to-one> 
+        
+        
+            
+	</class>
+</hibernate-mapping>
+
+

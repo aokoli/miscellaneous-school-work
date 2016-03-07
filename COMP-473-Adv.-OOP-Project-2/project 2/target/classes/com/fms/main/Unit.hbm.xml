@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping package="com.fms.facility">
+	<class name="Unit" table="unit">
+		<!--  <id name="unitId" column="unitId" />-->
+		<id name="unitId" type="java.lang.Integer">
+            <column name="unitId" />
+            <generator class="identity" />
+        </id>
+		<property name="vacant" type="boolean" column="isVacant" /> <!-- not-null="true" -->
+		<!--  <set name="usages" table="UNIT_USAGE" cascade="all">
+		    <key column="unitId" />
+		    <many-to-many column="usageId" class="com.fms.facilityuse.UsageImpl" unique="true" />
+		</set>-->
+		 
+		<many-to-one name="facility" class="Facility" fetch="select">
+            <column name="facilityId" not-null="false" />
+        </many-to-one>
+        
+        <set name="usages" table="USAGE" cascade="all"
+				inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="`unitId`" not-null="false" />
+            </key>
+            <one-to-many class="com.fms.facilityuse.UsageImpl" />
+        </set>
+
+		<set name="maintenanceMgr" table="MaintenanceMgr" cascade="all"
+				inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="`unitId`" not-null="false" />
+            </key>
+            <one-to-many class="com.fms.maintenance.MaintenanceMgrImpl" />
+        </set>
+        <set name="inspectionMgr" table="InspectionMgr" cascade="all"
+				inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="`unitId`" not-null="false" />
+            </key>
+            <one-to-many class="com.fms.inspection.InspectionMgrImpl" />
+        </set>
+	</class>
+</hibernate-mapping>

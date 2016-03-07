@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping package="com.fms.facilityuse">
+	
+	<class name="EmployeeImpl" table="EMPLOYEE">
+		<!--  <id name="employeeId" column="employeeId"/>-->
+		<id name="employeeId" type="java.lang.Integer">
+            <column name="employeeId" />
+            <generator class="identity" />
+        </id>
+		<property name="manager" type="boolean" column="isManager" />
+		<property name="technician" type="boolean" column="isTechnician" />
+		<many-to-one name="person" class="com.fms.facilityuse.PersonImpl" column="personId" cascade="all" unique="true" />
+		
+		<set name="schedules" table="SCHEDULE" 
+				inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="`employeeId`" not-null="true" />
+            </key>
+            <one-to-many class="com.fms.schedule.ScheduleImpl" />
+        </set>
+        
+        <set name="maintenances" table="MAINTENANCE" 
+				inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="`employeeId`" not-null="true" />
+            </key>
+            <one-to-many class="com.fms.maintenance.MaintenanceImpl" />
+        </set>
+        
+        <set name="inspections" table="INSPECTION" 
+				inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="`employeeId`" not-null="true" />
+            </key>
+            <one-to-many class="com.fms.inspection.InspectionImpl" />
+        </set>
+		
+		</class>
+</hibernate-mapping>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="artists.xsl"?>
+<artists xmlns="http://alexdiscography.org">
+  <artist>
+    <name>Eminem</name>
+    <genre>Hip Hop</genre>
+    <album>Infinite (1996)</album>
+    <album>The Slim Shady LP (1999)</album>
+    <album>The Marshall Mathers LP (2000)</album>
+    <album>Devil's Night (with D12) (2001)</album>
+    <album>The Eminem Show (2002)</album>
+    <album>D12 World (with D12) (2004)</album>
+    <album>Encore (2004)</album>
+    <album>Relapse (2009)</album>
+    <album>Recovery (2010)</album>
+    <album>The Marshall Mathers LP 2 (2013)</album>
+  </artist>
+  <artist>
+    <name>Jay-Z</name>
+    <genre>Hip Hop</genre>
+    <album>Reasonable Doubt (1996)</album>
+    <album>In My Lifetime, Vol. 1 (1997)</album>
+    <album>Vol. 2... Hard Knock Life (1998)</album>
+    <album>Vol. 3... Life and Times of S. Carter (1999)</album>
+    <album>The Dynasty: Roc La Familia (2000)</album>
+    <album>The Blueprint (2001)</album>
+    <album>The Blueprint2: The Gift &amp; The Curse (2002)</album>
+    <album>The Black Album (2003)</album>
+    <album>Kingdom Come (2006)</album>
+    <album>American Gangster (2007)</album>
+    <album>The Blueprint 3 (2009)</album>
+    <album>Magna Carta Holy Grail (2013)</album>
+  </artist>
+  <artist>
+    <name>Led Zeppelin</name>
+    <genre>Hard rock, heavy metal, blues rock, folk rock</genre>
+    <album>Led Zeppelin (1969)</album>
+    <album>Led Zeppelin II (1969)</album>
+    <album>Led Zeppelin III (1970)</album>
+    <album>Led Zeppelin IV (1971)</album>
+    <album>Houses of the Holy (1973)</album>
+    <album>Physical Graffiti (1975)</album>
+    <album>Presence (1976)</album>
+    <album>In Through the Out Door (1979)</album>
+    <album>Coda (1982)</album>
+  </artist>
+  <artist>
+    <name>Enya</name>
+    <genre>Ethereal wave, Celtic, world, New Age</genre>
+    <album>Enya (1986) (re-mastered in 1992 as The Celts)</album>
+    <album>Watermark (1988)</album>
+    <album>Shepherd Moons (1991)</album>
+    <album>The Memory of Trees (1995)</album>
+    <album>A Day Without Rain (2000)</album>
+    <album>Amarantine (2005)</album>
+    <album>And Winter Came... (2008)</album>
+  </artist>
+  <artist>
+    <name>Florence and the Machine</name>
+    <genre>Indie rock, indie pop, baroque pop, art rock, neo soul</genre>
+    <album>Lungs (2009)</album>
+    <album>Ceremonials (2011)</album>
+  </artist>
+  <artist>
+    <name>Sarah McLachlan</name>
+    <genre>Pop rock, soft rock, adult contemporary</genre>
+    <album>1988: Touch</album>
+    <album>1991: Solace</album>
+    <album>1993: Fumbling Towards Ecstasy</album>
+    <album>1997: Surfacing</album>
+    <album>2003: Afterglow</album>
+    <album>2006: Wintersong</album>
+    <album>2010: Laws of Illusion</album>
+  </artist>
+  <artist>
+    <name>M.O.P.</name>
+    <genre>Hip Hop</genre>
+    <album>To the Death (1994)</album>
+    <album>Firing Squad (1996)</album>
+    <album>First Family 4 Life (1998)</album>
+    <album>Warriorz (2000)</album>
+    <album>Foundation (2009)</album>
+    <album>Sparta (2011) (with Snowgoons)</album>
+  </artist>
+  <artist>
+    <name>Macklemore</name>
+    <genre>Hip Hop</genre>
+    <album>The Language of My World (2005)</album>
+    <album>The Heist (with Ryan Lewis) (2012)</album>
+  </artist>
+  <artist>
+    <name>Lady Gaga</name>
+    <genre />
+    <album>The Fame (2008)</album>
+    <album>The Fame Monster (2009)</album>
+    <album>Born This Way (2011)</album>
+    <album>Artpop (2013)</album>
+    <album>Cheek to Cheek with Tony Bennett (2014)</album>
+  </artist>
+  <artist>
+    <name>Earl Sweatshirt</name>
+    <genre>Hip Hop</genre>
+    <album>Earl (2010)</album>
+    <album>Doris (2013)</album>
+  </artist>
+</artists>

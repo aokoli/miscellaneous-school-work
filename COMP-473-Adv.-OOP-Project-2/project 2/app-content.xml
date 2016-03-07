@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="facility" class="com.fms.facility.Facility">
+		<!-- <property name="units" ref="unit" /> -->
+	</bean>
+	<bean id="unit" class="com.fms.facility.Unit" scope="prototype"></bean>
+	<bean id="employee" class="com.fms.facilityuse.EmployeeImpl" scope="prototype"></bean>
+	<bean id="person" class="com.fms.facilityuse.PersonImpl" scope="prototype"></bean>
+	<bean id="tenant" class="com.fms.facilityuse.TenantImpl" scope="prototype"></bean>
+	<bean id="usage" class="com.fms.facilityuse.UsageImpl" scope="prototype"></bean>
+	<bean id="problem" class="com.fms.problem.ProblemImpl" scope="prototype"></bean>
+	<bean id="request" class="com.fms.maintenance.RequestImpl" scope="prototype"></bean>
+	<bean id="schedule" class="com.fms.schedule.ScheduleImpl" scope="prototype"></bean>
+	<bean id="inspection" class="com.fms.inspection.InspectionImpl" scope="prototype"></bean>
+	<bean id="maintenance" class="com.fms.maintenance.MaintenanceImpl" scope="prototype"></bean>
+	<bean id="maintenanceMgr" class="com.fms.maintenance.MaintenanceMgrImpl" scope="prototype"></bean>
+	<bean id="inspectionMgr" class="com.fms.inspection.InspectionMgrImpl" scope="prototype"></bean>
+	<bean id="facilityService" class="com.fms.service.FacilityService" scope="prototype"></bean>
+	<bean id="adminService" class="com.fms.service.AdminService" scope="prototype"></bean>
+	<bean id="liabilityService" class="com.fms.service.LiabilityService" scope="prototype"></bean>
+
+</beans>

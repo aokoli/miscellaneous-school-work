@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping package="com.fms.facilityuse">
+	
+	<class name="TenantImpl" table="TENANT">
+		<!--  <id name="tenantId" column="tenantId"/>-->
+		<id name="tenantId" type="java.lang.Integer">
+            <column name="tenantId" />
+            <generator class="identity" />
+        </id>
+		<property name="income" type="double" column="income" length="30"/>
+		<property name="rent" type="double" column="rent" length="30"/>
+		 <many-to-one name="person" class="com.fms.facilityuse.PersonImpl" column="personId" cascade="all" unique="true" />
+		<!-- <one-to-one name="person" class="PersonImpl"
+			cascade="save-update"></one-to-one>-->
+		<set name="usages" table="USAGE" 
+				inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="`tenantId`" not-null="false" />
+            </key>
+            <one-to-many class="com.fms.facilityuse.UsageImpl" />
+        </set>
+		
+		</class>
+</hibernate-mapping>

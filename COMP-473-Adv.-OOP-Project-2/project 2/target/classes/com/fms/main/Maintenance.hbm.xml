@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping package="com.fms.maintenance">
+	<class name="MaintenanceImpl" table="MAINTENANCE">
+		<!--  <id name="maintenanceId" column="maintenanceId"/>-->
+		<id name="maintenanceId" type="java.lang.Integer">
+            <column name="maintenanceId" />
+            <generator class="identity" />
+        </id>
+		<property name="serviceCost" type="double" column="serviceCost" />
+		<property name="costPaid" type="boolean" column="isCostPaid" />
+		
+		<many-to-one name="employee" class="com.fms.facilityuse.EmployeeImpl" fetch="select">
+            <column name="`employeeId`" not-null="true" />
+        </many-to-one>
+	</class>
+</hibernate-mapping>

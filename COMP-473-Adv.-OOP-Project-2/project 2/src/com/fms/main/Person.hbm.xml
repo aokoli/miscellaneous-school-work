@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping package="com.fms.facilityuse">
+	
+	<class name="PersonImpl" table="PERSON">
+		<!--  <id name="personId" column="personId"/>-->
+		<id name="personId" type="java.lang.Integer">
+            <column name="personId" />
+            <generator class="identity" />
+        </id>
+		<property name="firstName" type="string" column="firstName" length="30"/>
+		<property name="lastName" type="string" column="lastName" length="30"/>
+		<property name="address" type="string" column="address" length="30"/>
+	</class>
+</hibernate-mapping>

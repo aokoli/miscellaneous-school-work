@@ -1,0 +1,36 @@
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:b="http://alexdiscography.org"
+        targetNamespace="http://alexdiscography.org"
+        elementFormDefault="qualified">
+
+  <element name="artists" type="b:artists_type"/>
+  <element name="artist" type="b:artist_type"/>
+  <element name="name" type="string"/>
+  <element name="album" type="string"/>
+
+
+  <complexType name="artists_type">
+    <sequence>
+      <element ref="b:artist" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="artists_title_type" mixed="true">
+    <sequence>
+      <any namespace="http://www.w3.org/1999/xhtml" 
+           minOccurs="0" maxOccurs="unbounded"
+           processContents="lax"/>
+    </sequence>
+  </complexType>
+
+  <complexType name="artist_type">
+    <sequence>
+      <element ref="b:name"/>
+      <element name="genre" type="string"/>
+      <element ref="b:album" minOccurs="0"  maxOccurs="unbounded"/>
+    </sequence>
+  </complexType>
+
+</schema>
+
+

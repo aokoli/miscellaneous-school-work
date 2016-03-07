@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+ 	<session-factory>		
+ 	 	<!-- Database connection settings -->	
+ 		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+ 		<property name="hibernate.connection.url"> jdbc:mysql://localhost:3306/fms2</property>
+ 		<property name="connection.username">root</property>
+ 		<property name="connection.password">root</property>
+ 	
+ 		<property name="transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>
+  	<!-- 		-->
+  		
+ 		<!-- SQL dialect - generate SQL for a particular database -->
+ 			<!--<property name="dialect">org.hibernate.dialect.MySQLInnoDBDialect</property>-->
+ 		
+ 	  <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+ 		
+ 
+ 		<!-- Echo all executed SQL statements -->
+ 		<property name="show_sql">true</property>
+ 
+ 		<!-- Enable Hibernate's automatic session context management -->
+ 		<property name="current_session_context_class">thread</property>
+ 		
+
+ 		<!-- Drop existing tables and create a new one -->
+ 		  <property name="hbm2ddl.auto">create</property>
+ 		
+ 		
+		<!-- Mapping resource configuration files 
+ 		
+ 		
+ 			 
+		-->
+ 		<mapping resource="com/fms/main/Facility.hbm.xml"/> 		 
+ 		<mapping resource="com/fms/main/Unit.hbm.xml"/> 
+ 		<mapping resource="com/fms/main/Usage.hbm.xml"/>		 
+ 		<mapping resource="com/fms/main/Person.hbm.xml"/> 		 
+ 		<mapping resource="com/fms/main/Employee.hbm.xml"/> 		 
+ 		<mapping resource="com/fms/main/Tenant.hbm.xml"/> 
+ 		<mapping resource="com/fms/main/Maintenance.hbm.xml"/> 
+	    <mapping resource="com/fms/main/Request.hbm.xml"/> 		 
+		<mapping resource="com/fms/main/Inspection.hbm.xml"/> 		 
+		<mapping resource="com/fms/main/Problem.hbm.xml"/> 
+		<mapping resource="com/fms/main/Schedule.hbm.xml"/> 
+		<mapping resource="com/fms/main/InspectionMgr.hbm.xml"/>
+		<mapping resource="com/fms/main/MaintenanceMgr.hbm.xml"/> 	
+ 			 
+ 	</session-factory>
+ </hibernate-configuration>
