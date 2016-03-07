@@ -1,2 +1,2 @@
 # miscellaneous-school-work
-Miscellaneous university work including projects and assignments.
+Miscellaneous university work: Projects and assignments.
